@@ -1,0 +1,73 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "soroban-sdk",
+    "soroban-sdk-macros",
+    "soroban-spec",
+    "soroban-spec-rust",
+    "soroban-ledger-snapshot",
+    "soroban-token-sdk",
+    ]
+
+[workspace.package]
+version = "20.2.0"
+rust-version = "1.74.0"
+
+[workspace.dependencies]
+soroban-sdk = { version = "20.2.0", path = "soroban-sdk" }
+soroban-sdk-macros = { version = "20.2.0", path = "soroban-sdk-macros" }
+soroban-spec = { version = "20.2.0", path = "soroban-spec" }
+soroban-spec-rust = { version = "20.2.0", path = "soroban-spec-rust" }
+soroban-ledger-snapshot = { version = "20.2.0", path = "soroban-ledger-snapshot" }
+soroban-token-sdk = { version = "20.2.0", path = "soroban-token-sdk" }
+
+[workspace.dependencies.soroban-env-common]
+version = "=20.1.1"
+git = "https://github.com/HashCash-Consultants/rs-soroban-env"
+rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+
+[workspace.dependencies.soroban-env-guest]
+version = "=20.1.1"
+git = "https://github.com/HashCash-Consultants/rs-soroban-env"
+rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+
+[workspace.dependencies.soroban-env-host]
+version = "=20.1.1"
+git = "https://github.com/HashCash-Consultants/rs-soroban-env"
+rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+
+[workspace.dependencies.hcnet-strkey]
+version = "=0.0.8"
+
+[workspace.dependencies.hcnet-xdr]
+version = "=20.0.3"
+git = "https://github.com/HashCash-Consultants/rs-hcnet-xdr"
+rev = "bc19f448db1bb6466b83976a89c0472587166582"
+default-features = false
+features = ["curr"]
+
+#[patch."https://github.com/stellar/rs-soroban-env"]
+#soroban-env-common = { path = "../rs-soroban-env/soroban-env-common" }
+#soroban-env-guest = { path = "../rs-soroban-env/soroban-env-guest" }
+#soroban-env-host = { path = "../rs-soroban-env/soroban-env-host/" }
+#[patch."https://github.com/stellar/rs-stellar-xdr"]
+#stellar-xdr = { path = "../rs-stellar-xdr/" }
+
+[profile.dev]
+overflow-checks = true
+panic = "abort"
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[profile.release-with-logs]
+inherits = "release"
+debug-assertions = true
