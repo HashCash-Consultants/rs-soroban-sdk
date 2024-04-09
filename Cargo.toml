@@ -25,17 +25,17 @@ soroban-token-sdk = { version = "20.2.0", path = "soroban-token-sdk" }
 [workspace.dependencies.soroban-env-common]
 version = "=20.1.1"
 git = "https://github.com/HashCash-Consultants/rs-soroban-env"
-rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+rev = "4c051aba140465905e6e559b94bea6165dd514b7"
 
 [workspace.dependencies.soroban-env-guest]
 version = "=20.1.1"
 git = "https://github.com/HashCash-Consultants/rs-soroban-env"
-rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+rev = "4c051aba140465905e6e559b94bea6165dd514b7"
 
 [workspace.dependencies.soroban-env-host]
 version = "=20.1.1"
 git = "https://github.com/HashCash-Consultants/rs-soroban-env"
-rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
+rev = "4c051aba140465905e6e559b94bea6165dd514b7"
 
 [workspace.dependencies.hcnet-strkey]
 version = "=0.0.8"
