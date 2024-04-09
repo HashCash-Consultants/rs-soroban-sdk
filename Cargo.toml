@@ -41,7 +41,7 @@ rev = "1f0d10f508c4f3b795e1c829dc0c7108d61bccb1"
 version = "=0.0.8"
 
 [workspace.dependencies.hcnet-xdr]
-version = "=20.0.3"
+version = "=20.0.4"
 git = "https://github.com/HashCash-Consultants/rs-hcnet-xdr"
 rev = "bb9eef6c2807f8504b983a8e1230a9c753bb6b14"
 default-features = false
